@@ -9,7 +9,7 @@ const displayMessage = (text, color) => {
     message.innerText = text;
     setTimeout(() => {
         message.style.visibility = "hidden";
-    },3000);
+    }, 3000);
 };
 
 const validateForm = () => {
@@ -24,30 +24,31 @@ const validateForm = () => {
         // show some error
         return displayMessage("Field cannot be empty", 'red');
     }
-    
+
     const extension = thumbnail.split(',').pop();
-    if(!exceptedImageFiles.includes(extension)){
+    if (!exceptedImageFiles.includes(extension)) {
         return displayMessage("ImageFile is not valid", "red");
     }
-    
+
     return true;
 };
 
-form.addEventListener('submit', aysnc(e) => {
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
     // Validate our form
     const valid = validateForm();
 
-    if(valid) {
+    if (valid) {
         //submit this form
         const formData = new FormData(form);
-        await postData(formData)
+        await postData(formData);
     }
 });
 
-const postData= async (data) =>{
-    await fetch('http://localhost:3000/api/create',{
-            method: "POST",
-            body: data,
-        })
+const postData = async (data) => {
+    await fetch('http://localhost:3000/api/create', {
+        method: 'POST',
+        body: data,
+    });
 }
