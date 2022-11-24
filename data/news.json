@@ -1,29 +1,20 @@
 [
   {
-    "title": "soe title",
-    "content": "some content"
+    "title": "New Title",
+    "content": "qwuhaif laksdnaois lkasdlnas laksdlasn lsaklaskn lfksanflasnf laskflkasf lskfanlkasnf asflknaslkfns aflkasnflsa flaksflkasnf laksnflkasf lksafnlkasf lksafnlksanfs flasknflasnf flkasnflksanf lkasfnlkasf lfknasklfna sfnaslfknsalf sflknsaflsanfas flsaknflsaf salfnksalnkfsa flaksfqlrhqir flasfnoifna flsafnlsf alsfkasfbaslfsaf lsafjasnf flaksfnlksaf oiehfod dalkfa.",
+    "category": "political",
+    "featured": "on",
+    "id": "1669265300836",
+    "desc": "qwuhaif laksdnaois lkasdlnas laksdlasn lsaklaskn lfksanflasnf laskflkasf lskfanlkasnf asflknaslkfns ....",
+    "thumbnail": "http://localhost:3000/1669265300836-The_Interpreter-Charles_Randolph.jpg"
   },
   {
-    "title": "some title",
-    "content": "some content"
-  },
-  {
-    "title": "some title",
-    "content": "some content"
-  },
-  {
-    "title": "some title",
-    "content": "some content"
-  },
-  {
-    "title": "some title",
-    "content": "some content",
-    "category": "tech"
-  },
-  {
-    "title": "some title",
-    "content": "some content",
-    "category": "tech",
-    "id": "1669126511032"
+    "title": "New Title",
+    "content": "qwuhaif laksdnaois lkasdlnas laksdlasn lsaklaskn lfksanflasnf laskflkasf lskfanlkasnf asflknaslkfns aflkasnflsa flaksflkasnf laksnflkasf lksafnlkasf lksafnlksanfs flasknflasnf flkasnflksanf lkasfnlkasf lfknasklfna sfnaslfknsalf sflknsaflsanfas flsaknflsaf salfnksalnkfsa flaksfqlrhqir flasfnoifna flsafnlsf alsfkasfbaslfsaf lsafjasnf flaksfnlksaf oiehfod dalkfa.",
+    "category": "political",
+    "featured": "on",
+    "id": "1669265304178",
+    "desc": "qwuhaif laksdnaois lkasdlnas laksdlasn lsaklaskn lfksanflasnf laskflkasf lskfanlkasnf asflknaslkfns ....",
+    "thumbnail": "http://localhost:3000/1669265304178-The_Interpreter-Charles_Randolph.jpg"
   }
 ]

@@ -1,7 +1,7 @@
 const select = (selector) => document.querySelector(selector);
 
 const form = select('.form');
-const message = select(".message");
+const message = select('.message');
 
 const displayMessage = (text, color) => {
     message.style.visibility = 'visible';
@@ -25,7 +25,7 @@ const validateForm = () => {
         return displayMessage("Field cannot be empty", 'red');
     }
 
-    const extension = thumbnail.split(',').pop();
+    const extension = thumbnail.split('.').pop();
     if (!exceptedImageFiles.includes(extension)) {
         return displayMessage("ImageFile is not valid", "red");
     }
@@ -35,10 +35,10 @@ const validateForm = () => {
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    
     // Validate our form
     const valid = validateForm();
-
+    
     if (valid) {
         //submit this form
         const formData = new FormData(form);
@@ -46,9 +46,28 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
+const resetForm = () => {
+    select('#title').value = "";
+    select("#content").value = "";
+    select('#thumbnail').value = null;
+    select('#category').value = '0';
+    select("#featured-content").checked = false;
+}
+
 const postData = async (data) => {
-    await fetch('http://localhost:3000/api/create', {
+    const result = await fetch('http://localhost:3000/api/create', {
         method: 'POST',
         body: data,
     });
-}
+
+    if(result.ok){
+        const response = await result.json();
+        if(response.success){
+            displayMessage(response.message, "green");
+            resetForm();
+        }
+        if(!response.success){
+            displayMessage(response.message, "red");
+        }
+    }
+};
