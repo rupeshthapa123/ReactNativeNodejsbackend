@@ -24,9 +24,22 @@ class News{
         const totalData = JSON.parse(await fs.promises.readFile(this.path));
         const {content} = data;
         const desc = content.substr(0,100) + '....'
-        totalData.push({ ...data, id, desc, thumbnail:`http://localhost:3000/${imageName}` });
+        totalData.push({ ...data, id, desc, thumbnail:`http://192.168.100.3:3000/${imageName}` });
         await fs.promises.writeFile(this.path, JSON.stringify(totalData, null, 2));
     }
+
+    async searchPosts(query){
+        try{
+            const data = await this.getAll();
+            return data.filter( news => 
+                news.title.toLowerCase().includes(query.toLowerCase())
+            );        
+        }
+        catch(error){
+            console.log("Error while searching post.");
+        }
+    }
+
 
     async getAll() {
         const data =  JSON.parse(await fs.promises.readFile(this.path));
